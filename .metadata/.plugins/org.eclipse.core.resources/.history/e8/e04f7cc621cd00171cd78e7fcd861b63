@@ -1,0 +1,22 @@
+package com.browser;
+
+import java.util.List;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class capture_screenshots_flipkart_Header
+{
+
+	public static void main(String[] args) 
+	{
+		FirefoxDriver driver = new FirefoxDriver();
+		driver.get("https://www.flipkart.com/");
+		driver.manage().window().maximize();
+		WebElement HeaderBlock = driver.findElementByXPath(".//*[@id='container']/div/div[1]/div/div[2]/div[1]/div");
+		List<WebElement>HeaderLinks=driver.findElementsByTagName("a");
+		System.out.println(HeaderLinks.size());
+		
+	}
+
+}

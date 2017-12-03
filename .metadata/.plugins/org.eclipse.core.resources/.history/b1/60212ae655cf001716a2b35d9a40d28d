@@ -1,0 +1,20 @@
+<suite name="TestNG suite">
+
+
+
+<test name="DataDriven test">
+    <classes>
+      <class name="com.datadrivenframework.NewTours_Registration"/>
+    </classes>
+  </test>
+  
+
+
+ 
+  <test name="Hybrid test">
+    <classes>
+      <class name="com.hybridframework.new_tours_registration"/>
+    </classes>
+  </test>
+   
+</suite> 

@@ -1,0 +1,36 @@
+package com.datadrivenframework;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+public class NewTours_Registration 
+{
+	FirefoxDriver driver;
+	
+	@BeforeTest
+	public void setup()
+	{
+		driver=new FirefoxDriver();
+		driver.get("http://newtours.demoaut.com");
+	}
+	
+	@Test(priority=1)
+	public void Register() throws IOException
+	{
+		FileInputStream file = new FileInputStream("C:\\Users\\Priya\\Desktop\\TestData\\RegistrationTestdata.xslx");
+		XSSFWorkbook workbook = new XSSFWorkbook(file);
+		XSSFSheet sheet = workbook.getSheet("Sheet1");
+		int RowCount =sheet.getLastRowNum();
+		System.out.println("RowCount");
+		
+		
+	}
+
+}

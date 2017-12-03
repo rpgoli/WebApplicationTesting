@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [TestNG suite]">
+  <test name="DataDriven test(failed)">
+    <classes>
+      <class name="com.datadrivenframework.NewTours_Registration">
+        <methods>
+          <include name="setup"/>
+          <include name="Registration"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.datadrivenframework.NewTours_Registration -->
+      <class name="com.hybridframework.new_tours_registration">
+        <methods>
+          <include name="setup"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.hybridframework.new_tours_registration -->
+    </classes>
+  </test> <!-- DataDriven test(failed) -->
+</suite> <!-- Failed suite [TestNG suite] -->

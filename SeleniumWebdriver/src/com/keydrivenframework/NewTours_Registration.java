@@ -1,0 +1,76 @@
+package com.keydrivenframework;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+public class NewTours_Registration 
+{
+	FirefoxDriver driver;
+	@BeforeTest
+	public void Setup()
+	{
+		driver=new FirefoxDriver();
+		driver.get("http://newtours.demoaut.com");
+		driver.manage().window().maximize();
+	}
+	
+	@Test(priority=1)
+	public void Register()
+	{
+        driver.findElement(By.linkText("REGISTER")).click();
+	}
+	
+	
+	@Test(priority=2)
+	public void Registration() throws IOException
+	{
+		FileInputStream file = new FileInputStream("C:\\Users\\Priya\\workspace\\SeleniumWebdriver\\locators.properties");
+		  Properties pr = new Properties();
+		  pr.load(file); 
+		  
+		  driver.findElement(By.name(pr.getProperty("FirstName"))).sendKeys("Test3");
+		  driver.findElement(By.name(pr.getProperty("LastName"))).sendKeys("Test");;
+          driver.findElement(By.name(pr.getProperty("PhoneNumber"))).sendKeys("07405234817");
+          driver.findElement(By.name(pr.getProperty("EmailId"))).sendKeys("test@gmail.com");
+          driver.findElement(By.name(pr.getProperty("Address"))).sendKeys("Flat10,carmine court");
+          driver.findElement(By.name(pr.getProperty("City"))).sendKeys("Harrow");
+          driver.findElement(By.name(pr.getProperty("State"))).sendKeys("London"); 
+          driver.findElement(By.name(pr.getProperty("PostCode"))).sendKeys("HA27HG");
+          driver.findElement(By.name(pr.getProperty("Country"))).sendKeys("UNITED KINGDOM");
+          driver.findElement(By.name(pr.getProperty("UserName"))).sendKeys("Keyword");
+          driver.findElement(By.name(pr.getProperty("Password"))).sendKeys("Keyword");
+          driver.findElement(By.name(pr.getProperty("ConfirmPassword"))).sendKeys("Keyword");
+          driver.findElement(By.name(pr.getProperty("Register"))).click();
+          
+            System.out.println(driver.getTitle());
+            System.out.println(driver.getCurrentUrl());
+            String ExpectedUsername="Keyword";
+            String ActualText=driver.findElement(By.xpath("html/body/div[1]/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[3]/td/p[3]/a/font/b")).getText();
+                        
+            if(ActualText.contains(ExpectedUsername))
+            {
+             System.out.println("User Registered with the same Name -- PASS");
+            }
+            else
+            {
+             System.out.println("User Registration Failed -- FAIL");
+            }
+            
+         }
+           
+
+	 @AfterTest
+	 public void tearDown()
+	 {
+	  driver.close();
+	 }
+
+
+}

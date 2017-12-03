@@ -1,0 +1,26 @@
+#name locator for FirstName
+FirstName = firstName
+#name locator for LastName 
+LastName = lastName
+#name locator for PhoneNumber 
+PhoneNumber = phone
+#name locator for EmailId 
+EmailId = userName
+#name locator for Address 
+Address = address1
+#name locator for City 
+City = city
+#name locator for State 
+State = state
+#name locator for PostalCode 
+PostalCode = PostalCode
+#name locator for Country 
+Country = country
+#name locator for UserName 
+UserName = email
+#name locator for Password 
+Password = password
+#name locator for ConfirmPassword 
+ConfirmPassword = confirmPassword
+#name of the locator for Register
+Register=register

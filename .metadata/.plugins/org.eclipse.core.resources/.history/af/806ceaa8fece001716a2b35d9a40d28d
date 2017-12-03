@@ -1,0 +1,20 @@
+#name locator for FirstName
+FirstName = firstName
+#name locator for LastName 
+LastName = lastName
+#name locator for PhoneNumber 
+PhoneNumber = phone
+#name locator for EmailId 
+EmailId = userName
+#name locator for Address 
+Address = address1
+#name locator for LastName 
+LastName = lastName
+#name locator for LastName 
+LastName = lastName
+#name locator for LastName 
+LastName = lastName
+#name locator for LastName 
+LastName = lastName
+#name locator for LastName 
+LastName = lastName
